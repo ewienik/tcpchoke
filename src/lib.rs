@@ -173,3 +173,13 @@ where
         .await?;
     Ok(())
 }
+
+pub fn set_panic_hook() {
+    use std::{panic, process};
+
+    let default_panic = panic::take_hook();
+    panic::set_hook(Box::new(move |info| {
+        default_panic(info);
+        process::exit(1);
+    }));
+}
