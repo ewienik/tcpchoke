@@ -1,0 +1,11 @@
+[package]
+name = "tcpchoke"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "3", features = ["derive"] }
+futures = "0"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = { version = "0", features = ["net", "sync", "time"] }
